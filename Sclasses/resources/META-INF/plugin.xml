@@ -1,0 +1,46 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>compileToClass</name>
+  <version>1.0</version>
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+  <description>从java文件中跳转到编译后的class目录,默认class路径为  project/target/classes </description>
+
+  <change-notes>compileToClass </change-notes>
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+<!--  <extensions defaultExtensionNs="com.intellij">-->
+<!--    <applicationConfigurable groupId="java.com.sclasses.config.MyPluginConfigurable"/>-->
+<!--  </extensions>-->
+
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.java</depends>
+
+  <actions>
+
+    <action id="OpenClassFolderAction" class="com.sclasses.actions.OpenClassFolderAction"
+            text="compileToClass" description="跳转编译后的class目录"><add-to-group
+            group-id="EditorPopupMenu" anchor="first"/><keyboard-shortcut keymap="$default" first-keystroke="alt D"/>
+    </action>
+
+<!--      <action-->
+<!--              id="DemoPlugin.DemoAction"-->
+<!--              icon="MyIcons.Action">-->
+<!--      </action>-->
+<!--    <action id="BugsCollectPluginId" class="com.sclasses.actions.EditorBugsPopupAction"-->
+<!--            text="添加Bug代码" description="右击添加该选中代码记录bug系统"><add-to-group-->
+<!--            group-id="EditorPopupMenu" anchor="first"/><keyboard-shortcut keymap="$default" first-keystroke="alt B"/>-->
+<!--    </action>-->
+  </actions>
+</idea-plugin>
